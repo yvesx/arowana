@@ -1,6 +1,18 @@
 #!/usr/bin/env python
 """A more advanced Reducer, using Python iterators and generators.
 http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/
+
+hduser@ubuntu:/usr/local/hadoop$ bin/hadoop jar contrib/streaming/hadoop-*streaming*.jar \
+-file /home/hduser/mapper.py  \
+-mapper /home/hduser/mapper.py \
+-file /home/hduser/reducer.py   \
+-reducer /home/hduser/reducer.py \
+-input /user/hduser/gutenberg/* \
+-D mapred.reduce.tasks=16\
+-D mapred.local.dir=/tmp/local\
+-output /user/hduser/gutenberg-output
+
+
 """
 
 from itertools import groupby
