@@ -7,10 +7,10 @@ hduser@ubuntu:/usr/local/hadoop$ bin/hadoop jar contrib/streaming/hadoop-*stream
 -mapper /home/hduser/mapper.py \
 -file /home/hduser/reducer.py   \
 -reducer /home/hduser/reducer.py \
--input /user/hduser/gutenberg/* \
+-input /user/hduser/arowana/*bloompickle \
 -D mapred.reduce.tasks=16\
 -D mapred.local.dir=/tmp/local\
--output /user/hduser/gutenberg-output
+-output /user/hduser/yves-test-output
 
 
 """
