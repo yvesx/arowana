@@ -3,10 +3,10 @@
 http://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/
 
 hduser@ubuntu:/usr/local/hadoop$ bin/hadoop jar contrib/streaming/hadoop-*streaming*.jar \
--file /home/hduser/mapper.py  \
--mapper /home/hduser/mapper.py \
--file /home/hduser/reducer.py   \
--reducer /home/hduser/reducer.py \
+-file /home/hduser/scripts/mapper2.py  \
+-mapper /home/hduser/scripts/mapper2.py \
+-file /home/hduser/scripts/reducer.py   \
+-reducer /home/hduser/scripts/reducer.py \
 -input /user/hduser/arowana/*bloompickle \
 -D mapred.reduce.tasks=16\
 -D mapred.local.dir=/tmp/local\
