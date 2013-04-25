@@ -93,8 +93,9 @@ while True:
         time.sleep(1)  
 
 
-ListOfFBIDs = returnListOfFBIDs()
-keys = ListOfFBIDs.keys()
-for key in keys[:10]:
-	str_to_file = readBFFromMongo(str(key))
-	pickle.dump( {"fbid": str(key), "bf":str_to_file} , open( "%s%s"%(str(key),".bloompickle"), "wb" ) )
+if (sys.argv[1] == "export"):
+	ListOfFBIDs = returnListOfFBIDs()
+	keys = ListOfFBIDs.keys()
+	for key in keys[:10]:
+		str_to_file = readBFFromMongo(str(key))
+		pickle.dump( {"fbid": str(key), "bf":str_to_file} , open( "%s%s"%(str(key),".bloompickle"), "wb" ) )
